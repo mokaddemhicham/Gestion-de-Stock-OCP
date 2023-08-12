@@ -1,0 +1,501 @@
+/* ----------------- General Rules ------------------ */
+
+:root{
+    --primary-color: #00a76b;
+    --secondary-color: #006d45;
+    --tertiary-color: #16b47b;
+    --primary-color-rgb: 23,155,255;
+}
+
+@font-face {
+    font-family: "Questrial";
+    src: url(../fonts/Questrial/Questrial-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #f1f1f1;
+}
+
+body{
+    font-family: 'Questrial', sans-serif;
+    background-color: #f1f1f1;
+    /* background: url("../images/bg.png") no-repeat center;
+    background-size: cover;
+    height: 100vh; */
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.overlay.activated{
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    transition: all .5s;
+}
+
+/* --------- Start Sidebar ---------- */
+
+.slidebar{
+    background-color: var(--primary-color);
+    height: 100vh;
+    width: 256px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width .5s;
+}
+
+
+.slidebar .slidebar-brand{
+    height: 50px;
+    padding: 1rem 0 1rem 1rem;
+}
+.slidebar .slidebar-brand .logo{
+    width: 100px;
+    transition: all .5s;
+}
+
+
+.slidebar .slidebar-menu ul{
+    padding: 0 !important;
+    margin: 50px 0 0 0;
+}
+.slidebar .slidebar-menu ul li{
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.slidebar .slidebar-menu ul li.active{
+    background-color: var(--secondary-color);
+}
+
+.slidebar .slidebar-menu ul li:hover{
+    background-color: var(--secondary-color);
+}
+
+.slidebar .slidebar-menu ul li:hover a{
+    color: #fff;
+}
+
+.slidebar .slidebar-menu ul li.active a{
+    color: #fff;
+}
+
+.slidebar .slidebar-menu ul li a{
+    color: rgb(255, 255, 246);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 25px;
+    display: block;
+}
+
+.slidebar .slidebar-menu ul li i{
+    padding-right: 1rem;
+    font-size: 17px;
+}
+
+
+/* --------- End Slidebar ---------- */
+
+/* ---------- Start main ---------- */
+
+main{
+	position: relative;
+    left: 256px;
+    width: calc(100% - 256px);
+    overflow: hidden;
+    top: 150px;
+    padding-bottom: 40px;
+    transition: all .5s;
+    
+}
+
+
+/* Start Navigation Bar */
+
+header nav{
+    width: calc(100% - 256px);
+    background-color: #fff;
+    box-shadow: 0 1px 10px -9px #555;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    transition: all .5s;
+}
+
+header nav .top-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem !important;
+    height: 60px;
+    border-bottom: 1px solid #D8DBE0;
+}
+
+header nav #breadcrumb{
+    padding: 1rem 1.5rem !important;
+    border-bottom: 1px solid #D8DBE0;
+}
+
+header nav #breadcrumb ol{
+    margin-bottom: 0;
+}
+
+header nav #breadcrumb ol i{
+    font-size: 14px;
+}
+
+header nav .toggle-menu i{
+    font-size: 19px;
+    color: #00001580;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header nav .toggle-menu span{
+    font-size: 19px;
+    color: #00001580;
+}
+
+
+header nav .admin-profile{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header nav .admin-profile .admin-image img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header nav .admin-profile .admin-info{
+    margin-left: 1rem;
+    text-align: center;
+}
+
+header nav .admin-profile .admin-info h4{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav .admin-profile .admin-info p{
+    margin: 0;
+    font-size: .9rem;
+}
+
+header nav .admin-profile .fa-sort-down{
+    margin-left: 10px;
+    color: #aaa;
+}
+
+.dropdown{
+    border: 1px solid #D8DBE0;
+    border-radius: 4px;
+    width: 220px;
+    background-color: #fff;
+}
+
+.dropdown ul{
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li:first-of-type{
+    background-color: #EBEDEF;
+    color: #8a93a2;
+    text-align: center;
+}
+
+.dropdown ul li{
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.dropdown ul li:not(:first-of-type):hover{
+    background-color: #EBEDEF;
+}
+
+.dropdown ul li a{
+    color: #4f5d73;
+    text-decoration: none;
+}
+
+.dropdown ul li a i{
+    margin-right: 5px;
+}
+
+[class*="uk-drop-bottom"]{
+    margin-top: 7px;
+}
+
+.badge-counter {
+    position: absolute;
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+    right: -0.8rem;
+    margin-top: -0.25rem;
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #fc544b;
+}
+
+.fa-bell{
+    font-size: 20px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+.notifications{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.notifications li{
+    padding: 10px 15px;
+}
+
+.uk-dropdown{
+    padding: 0 !important;
+    width: 380px;
+    max-height: 322px !important;
+    overflow-y: scroll;
+}
+
+.alert{
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.notifications li a{
+    color: #842029 !important;
+}
+
+/* End Navigation Bar */
+
+/* Start data-analysis section */
+
+.data-analysis {
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 30px;
+    position: relative;
+}
+
+.data-analysis .box{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0px 0px 10px 1px #959595;
+}
+
+.data-analysis .box .data .quantity{
+    font-size: 35px;
+    margin: 0 0 10px 0;
+    color: #222;
+    font-weight: bold;
+}
+
+.data-analysis .box .data p{
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.data-analysis .box .data-icon i{
+    font-size: 23px;
+    line-height: 40px;
+    margin-top: 3px;
+    color: var(--primary-color);
+}
+
+.data-analysis .box:last-of-type{
+    background-color: var(--primary-color);
+}
+
+.data-analysis .box:last-of-type .data .quantity , .data-analysis .box:last-of-type .data p,
+.data-analysis .box:last-of-type .data-icon i{
+    color: #fff;
+}
+
+/* End data-analysis */
+
+
+/* Start traffic-analysis */
+
+.traffic-analysis{
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.traffic-analysis canvas{
+    background-color: #fff;
+    padding: 1rem;
+}
+
+/* End traffic-analysis */
+
+
+.main-users{
+    padding: 0 15px;
+}
+
+.main-users .users{
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.main-users .users td a{
+	color: var(--tertiary-color);
+	font-size: 16px;
+	margin: 0 5px;
+}
+
+.main-users .uk-table{
+    min-width:max-content;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.table-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+}
+
+.table-header h3{
+	margin: 0;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.table-header > a{
+	color: #fff;
+	text-decoration: none;
+	background-color: var(--primary-color);
+	border-radius: 3px;
+	border-radius: 10px;
+    padding: 8px;
+	transition: all .3s;
+}
+
+.table-header > a:hover{
+	background-color: var(--tertiary-color);
+}
+
+.uk-table{
+	margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    border-right: 1px solid #e5e5e5;
+}
+
+.uk-table td{
+	vertical-align: middle;
+    color: #666;
+    font-size: 15px;
+}
+
+.uk-table th{
+	color: #222;
+	font-weight: 800;
+}
+
+.required{
+    color: red;
+    font-size: 20px;
+}
+
+.doc-icon{
+    color: var(--tertiary-color);
+    font-size: 27px;
+}
+
+.main-users .users .drop button{
+    background-color: var(--primary-color);
+    box-shadow: none;
+    transition: all .5s;
+}
+
+.main-users .users .drop button:hover{
+	background-color: var(--tertiary-color);
+}
+
+.main-users .users .drop .dropdown-menu{
+    background-color: var(--primary-color);
+    width: 194px;
+}
+
+.main-users .users .drop .dropdown-menu a{
+    color: #fff;
+}
+
+.main-users .users .drop .dropdown-menu a:hover{
+    color: var(--primary-color);
+}
+
+.main-users .users .drop .dropdown-menu a i{
+    margin-right: 10px;
+}
+
+.welcome{
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.copyright{
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+}
+
+.copyright a{
+    color: #fff;
+}
+

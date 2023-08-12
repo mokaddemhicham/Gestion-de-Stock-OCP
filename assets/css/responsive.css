@@ -1,0 +1,205 @@
+/* ---------- media quieries */
+
+@media (min-width: 1237px){
+    .slidebar.hidden{
+        width: 70px;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .slidebar.hidden .slidebar-brand {
+        padding: 1rem 0rem;
+    }
+
+    .slidebar.hidden .slidebar-brand .logo{
+        width: 70px;
+    }
+    
+    .slidebar.hidden .slidebar-menu ul li a{
+        padding: 14px 0px;
+    }
+
+    .slidebar.hidden .slidebar-menu ul li a i{
+        font-size: 20px;
+        padding-right: 0;
+    }
+    
+    .slidebar.hidden .slidebar-menu ul li a span{
+        display: none;
+    }
+    
+    main.hidden{
+        left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    main.hidden header nav{
+        width: calc(100% - 70px);
+    }
+
+    
+    
+}
+
+@media (min-width: 576px) and (max-width: 1236px){
+    /* --------- Start Slidebar ---------- */
+    .slidebar{
+        width: 70px;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .slidebar .slidebar-brand {
+        padding: 1rem 0rem;
+    }
+
+    .slidebar .slidebar-brand .logo{
+        width: 70px;
+    }
+
+    .slidebar .slidebar-menu ul li{
+        padding: 14px 0px;
+    }
+
+    .slidebar .slidebar-menu ul li a i{
+        font-size: 20px;
+        padding-right: 0;
+    }
+
+    .slidebar .slidebar-menu ul li a span{
+        display: none;
+    }
+
+    /* ---------- Start main ---------- */
+
+    main{
+        left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    /* Start Navigation Bar */
+
+    header nav{
+        width: calc(100% - 70px);
+    }
+}
+/* 
+@media (max-width: 966px){
+    .main-content{
+        grid-template-columns: 57.5% 37.5%;
+        grid-column-gap: 5%;
+    }
+    .main-orders .uk-table{
+        min-width: 900px !important;
+    }
+} */
+
+
+@media (max-width: 840px){
+    /* .main-content{
+        grid-template-columns: 1fr;
+        grid-row-gap: 40px;
+    } */
+
+    .data-analysis {
+        padding: 0 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+        position: relative;
+    }
+    /* .main-products .uk-table{
+        min-width: 700px !important;
+    } */
+    
+}
+
+@media (max-width: 575px){
+
+    .overlay-sm.activated{
+        background-color: rgba(0,0,0,.7);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        transition: all .5s;
+    }
+    
+     /* --------- Start Slidebar ---------- */
+     .slidebar{
+        width: 300px;
+        z-index: 999;
+        left: -300px;
+        top: 110px;
+        transition: left .5s;
+        text-align: left;
+    }
+
+    .slidebar.active{
+        left: 0;
+    }
+
+    .slidebar .slidebar-menu ul li a span{
+        display: inline-block;
+    }
+
+    /* ---------- Start main ---------- */
+
+    main{
+        left: 0px;
+        width: 100%;
+    }
+
+    /* Start Navigation Bar */
+
+    header nav{
+        width: 100%;
+    }
+
+    header nav .toggle-menu i{
+        font-size: 19px;
+        background-color: #00a76b;
+        color: #fff;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 31px;
+    }
+
+    header nav .toggle-menu span{
+        font-size: 1.3rem;
+        display: none;
+    }
+
+    
+    header nav .admin-profile .admin-image img{
+        width: 35px;
+        height: 35px;
+    }
+
+    header nav .admin-profile .admin-info h4{
+        font-size: .8rem;
+    }
+    
+    header nav .admin-profile .admin-info p{
+        font-size: .8rem;
+    }
+
+    .data-analysis {
+        grid-gap: 10px;
+    }
+
+    .data-analysis .box{
+        padding: 20px;
+    }
+    
+    .data-analysis .box .data .quantity{
+        font-size: 28px;
+    }
+    
+    .data-analysis .box .data-icon i{
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
